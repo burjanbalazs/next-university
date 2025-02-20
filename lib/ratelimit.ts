@@ -4,7 +4,7 @@ import { headers } from "next/headers";
 
 export const ratelimit = new Ratelimit({
   redis: redis,
-  limiter: Ratelimit.fixedWindow(1, "1m"),
+  limiter: Ratelimit.fixedWindow(15, "1m"),
   analytics: true,
   prefix: "@upstash/ratelimit",
 });
