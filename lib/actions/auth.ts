@@ -65,13 +65,7 @@ export async function signUp(params: AuthCredentials) {
       universityCard,
       password: hashedPassword,
     });
-    await workflowClient.trigger({
-      url: `${config.env.prodApiEndpoint}/api/workflows/onboarding`,
-      body: {
-        email,
-        fullName,
-      }
-  });
+    
     await signInWithCredentials({ email, password });
     return { success: true };
   } catch (error) {
